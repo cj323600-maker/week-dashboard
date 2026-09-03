@@ -673,9 +673,9 @@ const DATA = {
 
   /* Part 8 ─ 수출사업팀 */
   p8:[
-    {nm:"신규 문의", ds:"건", ow:"이규진", t:40, f:"num", w:[12, 14, 4, 2],
+    {nm:"신규 문의", ds:"건", ow:"이대근", t:40, f:"num", w:[12, 14, 4, 2],
      why:"광고 미집행", act:"아웃바운드 개발"},
-    {nm:"성약", ds:"건 · 주차별 미입력", ow:"이규진", t:10, f:"num", mo:1,
+    {nm:"성약", ds:"건 · 주차별 미입력", ow:"이대근", t:10, f:"num", mo:1,
      w:[null,null,null,null],
      why:"현행 사업 모델 판매 한계", act:"기존 거래 바이어 추가 성약 유도"}
   ],
@@ -1328,14 +1328,6 @@ B = card('과제별 진척률', '점선 = 완료 100%', cv('c24','cw tall'))+
     '건 · 보류 '+DATA.p7ops.hold+'건 · 취소 '+DATA.p7ops.cancel+'건 — '+DATA.p7ops.note+'</div>';
 H += fold('Part 7. 디지털혁신실', '최종호',
   Math.min.apply(null, DATA.p7.map(r=>r.pr)), B);
-
-/* ══════════════════════ Part 8 (접기) ══════════════════════ */
-B = card('신규 문의 추이', '단위: 건 · 월 목표 '+DATA.p8[0].t+'건 · 성약은 시트에 주차별 미입력(월 전망 '+DATA.p8[1].mo+'건, 전환율 '+
-    (DATA.p8[1].mo/fcRow(DATA.p8[0])*100).toFixed(1)+'% vs 목표 '+(DATA.leverT.expCvr*100).toFixed(0)+'%)', cv('c25','cw tall'))+
-'<div class="note">신규 문의 W1 '+DATA.p8[0].w[0]+'건 · 월 전망 '+fcRow(DATA.p8[0])+' / '+DATA.p8[0].t+'건 — 원인: '+DATA.p8[0].why+' / 대안: '+DATA.p8[0].act+
-'<br>성약 월 전망 '+DATA.p8[1].mo+' / '+DATA.p8[1].t+'건 — 원인: '+DATA.p8[1].why+' / 대안: '+DATA.p8[1].act+'</div>';
-H += fold('Part 8. 수출사업팀', '이규진 · 신규 문의 · 성약 · 전환율',
-  DATA.p8[1].mo/DATA.p8[1].t, B);
 
 /* Part 9. 재고관리 — 주보 화면에서 제외 (2026-09-03 지시) · DATA.p9 는 유지 */
 
