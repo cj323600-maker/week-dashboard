@@ -100,12 +100,17 @@ table.rp.mcat tr.gh td,table.rp.mop tr.gh td{background:#EEF2F6;color:#14324F;fo
 *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 html{background:#0E2A63!important}
 body{background:transparent!important}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 600px at 85% -10%,rgba(120,170,255,.45),transparent 60%),radial-gradient(700px 500px at 10% 110%,rgba(70,120,230,.45),transparent 60%),linear-gradient(135deg,#081A44 0%,#123A8A 52%,#2863C8 100%)}
+body:before{content:"";position:fixed;top:0;left:0;right:0;height:calc(100vh + 200px);height:calc(100lvh + 200px);z-index:-1;pointer-events:none;background:radial-gradient(900px 600px at 85% -10%,rgba(120,170,255,.45),transparent 60%),radial-gradient(700px 500px at 10% 110%,rgba(70,120,230,.45),transparent 60%),linear-gradient(135deg,#081A44 0%,#123A8A 52%,#2863C8 100%)}
 .paper{background:transparent!important;box-shadow:none!important;border-color:transparent!important}
-.paper>.topbar,.kpis>.card,.paper>.summ,.paper>.hl,.paper>section.cardsec,.paper>section.box,.paper>details.fold,.teams>details.fold,.paper>.dem{background-color:rgba(255,255,255,.96)!important;-webkit-backdrop-filter:blur(18px) saturate(1.25);backdrop-filter:blur(18px) saturate(1.25);border-radius:14px!important;border-color:rgba(255,255,255,.9)!important;box-shadow:0 12px 32px rgba(3,12,40,.34)!important}
+.paper>.topbar,.kpis>.card,.paper>.summ,.paper>.hl,.paper>section.cardsec,.paper>section.box,.paper>details.fold,.teams>details.fold,.paper>.dem{background-color:rgba(255,255,255,.96)!important;border-radius:14px!important;border-color:rgba(255,255,255,.9)!important;box-shadow:0 12px 32px rgba(3,12,40,.34)!important}
 .paper>h2.sec{color:#F5F8FE!important;border-color:rgba(255,255,255,.28)!important}
 .paper>h2.sec small,.paper>.foot,.paper>.note{color:#DCE5F3!important}
 .paper>.foot{border-color:rgba(255,255,255,.28)!important}
+/* 마우스를 올리면 카드가 살짝 떠오름(포털과 같은 반응 · 누르는 기능 없음 · 마우스가 있는 기기만) */
+@media (hover:hover){.kpis>.card,.paper>.dem,.teams>details.fold:not([open]){transition:transform .16s ease,box-shadow .16s ease}
+.kpis>.card:hover, .paper>.dem:hover, .teams>details.fold:not([open]):hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(3,12,40,.45)!important}}
+@media (prefers-reduced-motion:reduce){.kpis>.card,.paper>.dem,.teams>details.fold:not([open]){transition:none}.kpis>.card:hover, .paper>.dem:hover, .teams>details.fold:not([open]):hover{transform:none}}
+
 /* 원래부터 대비가 약하던 글자 보강(대비 4.5 이상으로) */
 .ib i.ex,.st i.ex,.db i.ex,.lg.ex{background:#B4560F!important}
 table.rp thead th.hi{background:#8A6400!important}
