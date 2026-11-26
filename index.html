@@ -366,6 +366,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:340px){#paper>nav.tbar.bn>label.n4,#paper>nav.tbar.bn>label.nall{font-size:10.5px!important}}
 @media(max-width:760px){#paper>nav.tbar.bn[data-n="5"]>label.n4,#paper>nav.tbar.bn[data-n="5"]>label.nall{font-size:11px!important;letter-spacing:-.6px!important}}@media(max-width:340px){#paper>nav.tbar.bn[data-n="5"]>label.n4,#paper>nav.tbar.bn[data-n="5"]>label.nall{font-size:9.8px!important}#paper>nav.tbar.bn[data-n="5"] .ni svg{width:22px!important;height:22px!important}}
 @media print{#paper>.allm{display:none!important}}
+/* 읽지 않는 긴 설명 글은 화면에서 뺌(2026-11-26 사용자 지시). 글자는 HTML에 남아 포털 · 점검 엔진이 읽는 값은 그대로 */
+#paper#paper p.foot,#paper#paper .note,#paper#paper section:has(>.invw)>p,#paper#paper .invw~p{display:none!important}
+#paper#paper .slg span{font-size:0!important}
+#paper#paper .tpw[data-g="재고"] h2.sec>small,#paper#paper details.tp6 .fb>h3>small{display:none!important}
 /* 표 정렬 통일(2026-11-26 사용자 지시): 머리글은 모두 가운데, 숫자 칸(오른쪽 정렬이던 칸)도 가운데, 이름 칸은 왼쪽 그대로 */
 #paper#paper table thead th{text-align:center!important}#paper#paper table td.nc,#paper#paper table tbody th.nc{text-align:center!important}
 /* 폰: 칸 글자가 옆 칸과 겹치지 않게. 칸 폭을 글자에 맞추고(고정 폭 해제) 화면보다 넓어지면 표 안에서만 옆으로 밀어 봄 */
