@@ -330,9 +330,26 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:340px){#paper>nav.tbar.bn>label.n4,#paper>nav.tbar.bn>label.nall{font-size:10.5px!important}}
 @media(max-width:760px){#paper>nav.tbar.bn[data-n="5"]>label.n4,#paper>nav.tbar.bn[data-n="5"]>label.nall{font-size:11px!important;letter-spacing:-.6px!important}}@media(max-width:340px){#paper>nav.tbar.bn[data-n="5"]>label.n4,#paper>nav.tbar.bn[data-n="5"]>label.nall{font-size:9.8px!important}#paper>nav.tbar.bn[data-n="5"] .ni svg{width:22px!important;height:22px!important}}
 @media print{#paper>.allm{display:none!important}}
+/* 일보 표 글자 크기를 주보와 같은 기준으로(2026-11-27 사용자 지시): PC 본문 15px · 머리글 13.5px, 재고 표는 14px */
+@media(min-width:1100px){
+#paper#paper>details.fold table.rp td,#paper#paper>details.fold table.rp tbody th{font-size:15px!important}
+#paper#paper>details.fold table.rp thead th{font-size:13.5px!important}
+#paper#paper>details.fold table.rp td small,#paper#paper>details.fold table.rp th small{font-size:12px!important}
+#paper#paper>details.tp6 table.rp td,#paper#paper>details.tp6 table.rp tbody th{font-size:14px!important}
+#paper#paper>details.tp6 table.rp thead th{font-size:13px!important}
+}
+/* 일보 초회 · 재출품 탭을 PC 한 화면에: 막대 · 표 · 접이식 높이를 화면 높이에 맞춤 */
+@media(min-width:1180px){
+#paper#paper .rsb .sb{height:clamp(18px,calc((100vh - 600px)/11),34px)!important}
+#paper#paper .rsb{margin-top:clamp(2px,calc((100vh - 760px)/40),6px)!important;margin-bottom:0!important;padding-top:0!important;padding-bottom:0!important}
+#paper#paper table.rh td,#paper#paper table.rh th{padding-top:clamp(2px,calc((100vh - 740px)/24),9px)!important;padding-bottom:clamp(2px,calc((100vh - 740px)/24),9px)!important}
+#paper#paper .rfold>summary{padding-top:clamp(3px,calc((100vh - 760px)/24),8px)!important;padding-bottom:clamp(3px,calc((100vh - 760px)/24),8px)!important}
+#paper#paper .rfold{margin-top:clamp(2px,calc((100vh - 780px)/30),6px)!important}
+#paper#paper .rsec{margin:6px 0 2px!important}#paper#paper .rslg{margin:3px 0 4px!important}#paper#paper h3.rsh{margin-bottom:2px!important}
+}
 /* 일보 재고 탭을 PC 한 화면에(2026-11-27 사용자 지시): 그래프(왼쪽) 옆에 재고 기간별 표, 그 아래 매입 구분별 일자 표. 줄 간격은 화면 높이에 맞춤 */
 @media(min-width:1180px){
-#paper#paper details.tp6>.fb{display:grid!important;grid-template-columns:minmax(0,66fr) minmax(0,34fr);gap:2px 26px;align-items:start}
+#paper#paper details.tp6>.fb{display:grid!important;grid-template-columns:minmax(0,62fr) minmax(0,38fr);gap:2px 26px;align-items:start}
 #paper#paper details.tp6>.fb>*{grid-column:1/-1;min-width:0}
 #paper#paper details.tp6>.fb>h3:first-of-type,#paper#paper details.tp6>.fb>.invw,#paper#paper details.tp6>.fb>.invn+div{grid-column:1}
 #paper#paper details.tp6>.fb>.blocks{grid-column:2;grid-row:1/span 3;margin-top:0!important}
